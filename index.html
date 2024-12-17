@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-box {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Programming Fun Fact Generator</h1>
+        <div id="fact" class="fact-box">
+            Click the button to see a fun fact about programming!
+        </div>
+        <button id="generateFact">Generate Fun Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "The first computer programmer was Ada Lovelace in the 1800s.",
+            "The first computer virus was created in 1983.",
+            "The first high-level programming language was Fortran, developed in the 1950s.",
+            "Python is named after the comedy series 'Monty Python's Flying Circus'.",
+            "The first game ever created was a version of Tic-Tac-Toe in 1952.",
+            "JavaScript was created in just 10 days.",
+            "The first 1GB hard drive was announced in 1980, weighing over 500 pounds."
+        ];
+
+        document.getElementById('generateFact').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
