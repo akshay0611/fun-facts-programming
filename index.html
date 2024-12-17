@@ -13,6 +13,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
 
         .container {
@@ -20,7 +21,8 @@
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
         }
 
         .fact-box {
@@ -28,6 +30,7 @@
             padding: 15px;
             background-color: #e0e0e0;
             border-radius: 5px;
+            animation: slideIn 0.5s ease-out;
         }
 
         button {
@@ -38,15 +41,39 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         button:hover {
             background-color: #0056b3;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            animation: rotate 2s infinite linear;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="https://via.placeholder.com/100" alt="Fun Fact Image">
         <h1>Programming Fun Fact Generator</h1>
         <div id="fact" class="fact-box">
             Click the button to see a fun fact about programming!
